@@ -7,11 +7,14 @@ public class sprinto_darbas_1 {
         Scanner myObj = new Scanner(System.in);
         System.out.println("Įveskite savo vardą");
         String userName = myObj.nextLine();  // Read user input
-        Scanner myObj2 = new Scanner(System.in);
         System.out.println("Įveskite savo pavardę");
         String userSurname = myObj.nextLine();
         System.out.println("Įveskite savo amžių");
         String userAge = myObj.nextLine();
+
+        
+
+
         // ... writting to files
         File relativeFile2 = new File("./data/import.csv");
         FileWriter fw = null;
@@ -20,14 +23,14 @@ public class sprinto_darbas_1 {
             BufferedWriter bw = new BufferedWriter(fw);
             // writting file with newline
             String fileLine2 = userName;
-            bw.write(fileLine2);
-            bw.write("\n");
-
-            bw.write(userSurname);
-            bw.newLine();
-
-            bw.write(userAge);
-            bw.write("\n");
+            bw.write(fileLine2 + " " + userSurname + " " + userAge);
+//            bw.write("\n");
+//
+//            bw.write(userSurname);
+//            bw.newLine();
+//
+//            bw.write(userAge);
+//            bw.write("\n");
 
             // bw.flush();
             bw.close(); // close automatically flushes the buffer
@@ -60,3 +63,4 @@ public class sprinto_darbas_1 {
 //        System.out.println("Jūsų amžius yra: " + userAge);  // Output user input
     }
 }
+
